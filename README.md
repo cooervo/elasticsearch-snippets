@@ -59,6 +59,7 @@ GET /nyc_visionzero/logs/_search
 
 GET all in range date, and number_of_cyclist_killed > 0, only return fields:   `"latitude"`, `"number_of_cyclist_killed"`
 
+´´´
 {
   "query": {
     "bool": {
@@ -83,3 +84,4 @@ GET all in range date, and number_of_cyclist_killed > 0, only return fields:   
   },
   "_source": ["latitude", "number_of_cyclist_killed"]
 }
+
