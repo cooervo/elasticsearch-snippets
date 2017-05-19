@@ -56,3 +56,30 @@ GET /nyc_visionzero/logs/_search
   }
 }
 ```
+
+GET all in range date, and number_of_cyclist_killed > 0, only return fields:   `"latitude"`, `"number_of_cyclist_killed"`
+
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "range": {
+            "date": {
+              "gt": "18/05/2017",
+              "lt": "19/05/2017"
+            }
+          }
+        },
+        {
+          "range": {
+            "number_of_cyclist_killed": {
+              "gt": 0
+            }
+          }
+        }
+      ]
+    }
+  },
+  "_source": ["latitude", "number_of_cyclist_killed"]
+}
